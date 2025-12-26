@@ -1,0 +1,20 @@
+# ===== Windows system files =====
+AppData/
+NTUSER.*
+Documents/
+Downloads/
+Music/
+Videos/
+
+# ===== Python =====
+__pycache__/
+*.pyc
+
+# ===== Docker =====
+.env
+
+# ===== VS Code =====
+.vscode/
+
+# ===== Node =====
+node_modules/
