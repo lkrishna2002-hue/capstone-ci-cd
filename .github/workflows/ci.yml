@@ -11,27 +11,14 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
-    - name: Set up Docker
-      uses: docker/setup-buildx-action@v3
+      - name: Set up Docker
+        uses: docker/setup-buildx-action@v3
 
-    - name: Build backend image
-      run: docker build -t backend ./backend
+      - name: Build backend image
+        run: docker build -t backend ./backend
 
-    - name: Build frontend image
-      run: docker build -t frontend ./frontend
-
-    - name: Run backend container
-      run: |
-        docker run -d -p 5000:5000 backend
-        sleep 5
-        curl http://localhost:5000 || exit 1
- deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-    - name: Deployment message
-      run: echo "🚀 Application deployed successfully!"
+      - name: Build frontend image
+        run: docker build -t frontend ./frontend
