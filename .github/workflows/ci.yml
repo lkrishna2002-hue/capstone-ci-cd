@@ -22,3 +22,15 @@ jobs:
 
       - name: Build frontend image
         run: docker build -t frontend ./frontend
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Deploy (simulation)
+        run: |
+          echo "🚀 Deploying application..."
+          echo "Frontend and Backend images built successfully"
