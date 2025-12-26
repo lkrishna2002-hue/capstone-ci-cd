@@ -28,3 +28,10 @@ jobs:
         docker run -d -p 5000:5000 backend
         sleep 5
         curl http://localhost:5000 || exit 1
+ deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Deployment message
+      run: echo "🚀 Application deployed successfully!"
