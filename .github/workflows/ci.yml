@@ -36,15 +36,15 @@ jobs:
 
 
         with:
-          username: ${{ secrets.DOCKERHUB_K.Leela Krishna  }}
+          username: ${{ secrets.DOCKERHUB_leela216}}
           password: ${{ secrets.DOCKERHUB_Leela@2002 }}
 
       - name: Build & Push backend image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_K.Leela Krishna  }}/capstone-backend:latest ./backend
-          docker push ${{ secrets.DOCKERHUB_K.Leela Krishna }}/capstone-backend:latest
+          docker build -t ${{ secrets.DOCKERHUB_leela216}}/capstone-backend:latest ./backend
+          docker push ${{ secrets.DOCKERHUB_leela216}}/capstone-backend:latest
 
       - name: Build & Push frontend image
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_K.Leela Krishna }}/capstone-frontend:latest ./frontend
-          docker push ${{ secrets.DOCKERHUB_K.Leela Krishna }}/capstone-frontend:latest
+          docker build -t ${{ secrets.DOCKERHUB_leela216}}/capstone-frontend:latest ./frontend
+          docker push ${{ secrets.DOCKERHUB_leela216}}/capstone-frontend:latest
