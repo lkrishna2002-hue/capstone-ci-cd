@@ -35,12 +35,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_leela216 }}
           password: ${{ secrets.DOCKERHUB_github-actions }}
 
-      - name: Build & Push backend image
-        run: |
-          docker build -t ${{ secrets.DOCKERHUB_leela216 }}/capstone-backend:latest ./backend
-          docker push ${{ secrets.DOCKERHUB_leela216 }}/capstone-backend:latest
+      -- name: Push backend image
+  run: |
+    docker build -t leela216/capstone-backend:latest ./backend
+    docker push leela216/capstone-backend:latest
 
-      - name: Build & Push frontend image
-        run: |
-          docker build -t ${{ secrets.DOCKERHUB_leela216 }}/capstone-frontend:latest ./frontend
-          docker push ${{ secrets.DOCKERHUB_leela216 }}/capstone-frontend:latest
+- name: Push frontend image
+  run: |
+    docker build -t leela216/capstone-frontend:latest ./frontend
+    docker push leela216/capstone-frontend:latest
