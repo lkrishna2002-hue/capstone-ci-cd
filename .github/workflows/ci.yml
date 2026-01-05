@@ -12,7 +12,7 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Docker
+      - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
       - name: Build backend image
@@ -34,12 +34,12 @@ jobs:
           username: ${{ secrets.DOCKERHUB_USERNAME }}
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
-      - name: Push backend image
+      - name: Build & Push backend image
         run: |
           docker build -t klk216/capstone-backend:latest ./backend
           docker push klk216/capstone-backend:latest
 
-      - name: Push frontend image
+      - name: Build & Push frontend image
         run: |
           docker build -t klk216/capstone-frontend:latest ./frontend
           docker push klk216/capstone-frontend:latest
