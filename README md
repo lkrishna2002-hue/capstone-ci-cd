@@ -1,0 +1,201 @@
+# Capstone CI/CD Project  
+**Docker + GitHub Actions + Render**
+
+---
+
+## Project Overview
+
+This is a **full DevOps CI/CD project** where a **Flask backend** and a **static frontend** are containerized using **Docker**, built using **GitHub Actions**, and deployed automatically to **Render** (without using AWS).
+
+---
+
+## Architecture
+Developer
+|
+| git push
+v
+GitHub Repository
+|
+| GitHub Actions (CI)
+| - Build Docker Images
+| - Run checks
+v
+Render Platform (CD)
+|
+| Auto Deploy
+v
+Live Application
+
+
+---
+
+## Project Structure
+
+
+
+capstone-ci-cd/
+│
+├── .github/workflows/
+│ ├── ci.yml
+│ └── deploy.yml
+│
+├── backend/
+│ ├── app.py
+│ └── Dockerfile
+│
+├── frontend/
+│ ├── index.html
+│ └── Dockerfile
+│
+├── docker-compose.yml
+├── .gitignore
+└── README.md
+
+
+
+
+## Tech Stack
+
+| Layer        | Technology |
+|-------------|------------|
+| Backend     | Python, Flask |
+| Frontend    | HTML |
+| Containers  | Docker |
+| CI/CD       | GitHub Actions |
+| Deployment  | Render |
+| OS          | Linux (CI runner) |
+
+---
+
+##  Backend Details
+
+## Features
+- `/` → Health response
+- `/health` → Health check endpoint
+- `/items` → Sample API endpoint
+
+## Backend URL
+
+https://capstone-ci-cd.onrender.com/
+
+
+## Output
+
+Backend is running
+
+##  Frontend Details
+
+- Static HTML page
+- Deployed separately on Render
+- Uses Docker
+
+## Frontend URL
+
+http://127.0.0.1:5500/frontend/index.html
+
+## output
+Frontend is running
+This is my CI/CD Capstone Project
+
+Items from Backend
+
+## Docker
+
+### Backend Dockerfile (example)
+```dockerfile
+FROM python:3.11-slim
+WORKDIR /app
+COPY . .
+RUN pip install flask psycopg2-binary
+EXPOSE 5000
+CMD ["python", "app.py"]
+
+Frontend Dockerfile (example)
+FROM nginx:alpine
+COPY index.html /usr/share/nginx/html/index.html
+EXPOSE 80
+
+ CI/CD Pipeline (GitHub Actions)
+CI Workflow
+
+Triggered on git push
+
+Builds Docker images
+
+Validates application
+
+CD Workflow
+
+Render automatically deploys on every commit
+
+No manual server setup
+
+No AWS used
+
+Deployment (Render)
+Backend
+
+Type: Web Service
+
+Language: Docker
+
+Root Directory: backend
+
+Health Check Path: /health
+
+Frontend
+
+Type: Web Service
+
+Language: Docker
+
+Root Directory: frontend
+
+Health Check Path: /
+
+ What This Project Demonstrates
+
+ Docker containerization
+ CI/CD using GitHub Actions
+ Cloud deployment without AWS
+ Monorepo handling
+ Production-ready DevOps workflow
+
+ How to Run Locally (Optional)
+docker-compose up --build
+
+
+Backend:
+
+http://localhost:5000
+
+
+Frontend:
+
+http://localhost
+
+
+
+##Interview Ready Statement
+
+“I built a complete CI/CD pipeline using Docker, GitHub Actions, and Render to deploy a Flask backend and static frontend without using AWS.”
+
+##Author
+
+Leelakrishna Karumuru
+GitHub: https://github.com/lkrishna2002-hue
+
+## Final Status
+
+ Backend deployed
+ Frontend deployed
+ CI/CD working
+ Project completed
+
+Capstone Project Successfully Completed
+
+
+
+
+
+
